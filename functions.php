@@ -7,5 +7,16 @@ function loadScrips() {
 
 add_action("wp_enqueue_script", "loadScrips");
 
+function config() {
+
+    register_nav_menus(
+    array(
+        "wp_devs_main_menu" => "Main Menu",
+        "wp_devs_footer_menu" => "Footer Menu"
+    ));
+}
+
+add_action("after_setup_theme", "config", 0);
+
 
 ?>
